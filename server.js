@@ -11,7 +11,7 @@ const redis =   require('redis');
 const io =      require('socket.io');
 const client =  redis.createClient();
 
-server.listen(3000, 'localhost');
+server.listen(3000, '103.7.40.222');
 
 io.listen(server).on('connection', function(client) {
     const redisClient = redis.createClient();
