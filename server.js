@@ -16,6 +16,7 @@ server.listen(3000, 'localhost');
 io.listen(server).on('connection', function(client) {
     const redisClient = redis.createClient()
     redisClient.subscribe('realTime.notification');
+    redisClient.subscribe('realTime.comment');
 
     redisClient.on("message", function(channel, message) {
         client.emit(channel, message);
